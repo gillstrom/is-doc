@@ -1,8 +1,15 @@
 'use strict';
+var CFB = require('cfb');
 module.exports = function (buf) {
 	if (!buf || buf.length < 8) {
 		return false;
 	}
-
-	return buf[0] === 0xD0 && buf[1] === 0xCF && buf[2] === 0x11 && buf[3] === 0xE0 && buf[4] === 0xA1 && buf[5] === 0xB1 && buf[6] === 0x1A && buf[7] === 0xE1;
+    var cfb = CFB.parse(buf);
+    var WordDocument=cfb.find('WordDocument');
+    if(!WordDocument && typeof(WordDocument)!="undefined" && WordDocument!==0){
+        //can't find WordDocument
+        return false;
+    }
+    var wIdent=WordDocument.content.readUInt16LE(0);
+    return wIdent==0xa5ec;
 };
