@@ -30,7 +30,7 @@
   ],
   "devDependencies": {
     "ava": "^0.0.4",
-    "read-chunk": "^1.0.1"
-	"cfb": "^0.10.2-a"
+    "read-chunk": "^1.0.1",
+	"cfb":"^0.10.2-a"
   }
 }
