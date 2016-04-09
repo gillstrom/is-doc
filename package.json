@@ -1,6 +1,6 @@
 {
   "name": "is-doc",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "Check if a Buffer/Uint8Array is a .doc file.",
   "license": "MIT",
   "repository": "gillstrom/is-doc",
@@ -30,7 +30,9 @@
   ],
   "devDependencies": {
     "ava": "^0.0.4",
-    "read-chunk": "^1.0.1",
-	"cfb":"^0.10.2-a"
+    "read-chunk": "^1.0.1"
+  },
+  "dependencies": {
+    "cfb": "^0.10.3"
   }
 }
