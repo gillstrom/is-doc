@@ -5,10 +5,10 @@ var isDoc = require('../');
 var read = require('fs').readFile;
 test(function (t) {
     t.plan(8);
-    const file1 = path.join(__dirname, 'fixtures/test.doc');
-    const file2 = path.join(__dirname, 'fixtures/test.xls');
-    const file3 = path.join(__dirname, 'fixtures/test.ppt');
-    const file4 = path.join(__dirname, 'fixtures/test.txt');
+    var file1 = path.join(__dirname, 'fixtures/test.doc');
+    var file2 = path.join(__dirname, 'fixtures/test.xls');
+    var file3 = path.join(__dirname, 'fixtures/test.ppt');
+    var file4 = path.join(__dirname, 'fixtures/test.txt');
     read(file1, function (err, data) {
         t.assert(!err, err);
         t.assert(isDoc(data));
